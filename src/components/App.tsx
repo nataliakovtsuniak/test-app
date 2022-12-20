@@ -1,13 +1,17 @@
-import React from "react";
+import { ThemeProvider } from "@mui/material/styles";
 
 import Layout from "./Layout";
 import routes from "../routes";
 import { AppContextProvider } from "../hooks/useAppContext";
 
+import { theme } from "../theme";
+
 const App = (): JSX.Element => {
   return (
     <AppContextProvider>
-      <Layout>{routes}</Layout>
+      <ThemeProvider theme={theme}>
+        <Layout>{routes}</Layout>
+      </ThemeProvider>
     </AppContextProvider>
   );
 };

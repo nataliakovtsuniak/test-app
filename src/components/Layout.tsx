@@ -1,6 +1,6 @@
-import React from "react";
+import { LayoutProps } from "../types";
 
-const Layout = ({ children }: LayoutProps): JSX.Element => {
+const Layout = ({ children }: LayoutProps) => {
   return <div>{children}</div>;
 };
 

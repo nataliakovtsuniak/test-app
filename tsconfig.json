@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "esnext",
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noEmit": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": [
       "es6",
       "dom"
@@ -15,5 +16,5 @@
   },
   "include": [
     "./src"
-  ]
+  ],
 }

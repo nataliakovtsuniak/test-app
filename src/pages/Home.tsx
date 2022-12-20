@@ -1,19 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
-import { useAppContext } from "../hooks/useAppContext";
-import Skeleton from "@mui/material/Skeleton";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
 
-const Home: React.FC = (): JSX.Element => {
-  const { count } = useAppContext();
+import { Drawer } from "../components/Drawer/Drawer";
+import { AppBar } from "../components/AppBar/AppBar";
+import { Calculator } from "../components/Calculator";
+
+export const navItems = [
+  "OSRS Gold",
+  "RS3 Gold",
+  "Sell RS Gold",
+  "OSRS Items",
+  "OSRS Accounts",
+  "Reward Chests",
+];
+
+export const Home = () => {
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setDrawerOpen((prevState) => !prevState);
+  };
 
   return (
-    <section>
-      <h1>Welcome!</h1>
-      <p>Current count: {count}</p>
-      <Skeleton width={200} height={400} />
-      <Link to="/count">Go to count page</Link>
-    </section>
+    <div>
+      <CssBaseline />
+      <AppBar onClick={handleDrawerToggle} isDrawerOpen={isDrawerOpen} />
+      <Box component="nav">
+        <Drawer open={isDrawerOpen} onClick={handleDrawerToggle} />
+      </Box>
+      <Box
+        sx={{
+          height: "100%",
+          paddingTop: 14,
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <Calculator />
+      </Box>
+    </div>
   );
 };
 

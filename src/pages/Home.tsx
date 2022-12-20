@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 
 import { Drawer } from "../components/Drawer/Drawer";
-import { AppBar } from "../components/AppBar/AppBar";
+import { AppBar } from "../components/AppBar";
 import { Calculator } from "../components/Calculator";
 
 export const navItems = [
